@@ -6,7 +6,7 @@
 /*   By: rberon-s <rberon-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 13:50:34 by rberon-s          #+#    #+#             */
-/*   Updated: 2019/10/06 15:49:28 by rberon-s         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:30:50 by rberon-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static char	pf_ennemy_char(int player)
 {
-	return (player == 2 ? 'X' : 'O'); // тут поменяла
+	return (player == 2 ? 'O' : 'X');
 }
 
-static char	pf_player_char(int player) // а тут что ну
+static char	pf_player_char(int player)
 {
 	return (player == 1 ? 'O' : 'X');
 }

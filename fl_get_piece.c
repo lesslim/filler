@@ -6,7 +6,7 @@
 /*   By: rberon-s <rberon-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 20:14:51 by rberon-s          #+#    #+#             */
-/*   Updated: 2019/10/06 15:49:09 by rberon-s         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:15:26 by rberon-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static int	pf_get_board_info(t_board *bd)
 	ret = 0;
 	if (get_next_line(STDIN_FILENO, &line) && ft_strstr(line, "Piece"))
 	{
-		if (ft_strchr(line, ' ') != ft_strrchr(line, ' ')) // тут тоже
+		if (ft_strchr(line, ' ') && ft_strrchr(line, ' '))
 		{
 			bd->height = ft_atoi(ft_strchr(line, ' '));
-			bd->width = ft_atoi(ft_strchr(ft_strchr(line, ' '), ' '));
+			bd->width = ft_atoi(ft_strrchr(line, ' '));
 			ret = 1;
 		}
 	}
