@@ -21,15 +21,15 @@ static int	pf_get_board_info(t_board *bd)
 	ret = 0;
 	if (get_next_line(STDIN_FILENO, &line) && ft_strstr(line, "Piece"))
 	{
-		if (ft_strchr(line, ' ') && ft_strrchr(line, ' '))
+		if (ft_strchr(line, ' ') != ft_strrchr(line, ' ')) // тут тоже
 		{
 			bd->height = ft_atoi(ft_strchr(line, ' '));
-			bd->width = ft_atoi(ft_strrchr(line, ' '));
+			bd->width = ft_atoi(ft_strchr(ft_strchr(line, ' '), ' '));
 			ret = 1;
 		}
 	}
 	ft_strdel(&line);
-	return (1);
+	return (ret);
 }
 
 int			fl_get_piece(t_board *pi)
@@ -52,6 +52,8 @@ int			fl_get_piece(t_board *pi)
 			ft_strncpy(pi->board[i], line, pi->width);
 			ft_strdel(&line);
 		}
+		else //тут ещё
+			return (0);
 		i++;
 	}
 	return (1);

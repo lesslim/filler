@@ -14,10 +14,10 @@
 
 static char	pf_ennemy_char(int player)
 {
-	return (player == 2 ? 'O' : 'X');
+	return (player == 2 ? 'X' : 'O'); // тут поменяла
 }
 
-static char	pf_player_char(int player)
+static char	pf_player_char(int player) // а тут что ну
 {
 	return (player == 1 ? 'O' : 'X');
 }

@@ -21,15 +21,15 @@ static int	pf_get_board_info(t_board *bd)
 	ret = 0;
 	if (get_next_line(STDIN_FILENO, &line) && (ft_strstr(line, "Plateau")))
 	{
-		if (ft_strchr(line, ' ') && ft_strrchr(line, ' '))
+		if (ft_strchr(line, ' ') != ft_strrchr(line, ' ')) // тут
 		{
 			bd->height = ft_atoi(ft_strchr(line, ' '));
-			bd->width = ft_atoi(ft_strrchr(line, ' '));
+			bd->width = ft_atoi(ft_strchr(ft_strchr(line, ' '), ' '));
 			ret = 1;
 		}
 	}
 	ft_strdel(&line);
-	return (1);
+	return (ret);
 }
 
 static int	pf_alloc_board_map(t_board *bd)
